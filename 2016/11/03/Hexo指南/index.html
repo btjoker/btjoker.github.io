@@ -89,7 +89,7 @@ Hexo博客建立简洁高效，如同官网的介绍。安装过程非常简单�
 部署至github安装完成后需要部署至git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 安装指南">
-<meta property="og:url" content="btjoker.github.io/2016/11/03/hello-world/index.html">
+<meta property="og:url" content="btjoker.github.io/2016/11/03/Hexo指南/index.html">
 <meta property="og:site_name" content="瓦尔哈拉">
 <meta property="og:description" content="Hexo官方介绍Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。官网 https://hexo.io/zh-cn/docs/index.html
 Hexo博客建立简洁高效，如同官网的介绍。安装过程非常简单，官网有非常详细的文档，安装文档；并且还是中文的哦！
@@ -100,7 +100,7 @@ Hexo博客建立简洁高效，如同官网的介绍。安装过程非常简单�
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/9b7f4490gw1f9g5zhcuunj20md0etjuh.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/9b7f4490gw1f9g6kjkz4aj20un08k41f.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/mw690/9b7f4490gw1f9g7evsiasj20m506smyj.jpg">
-<meta property="og:updated_time" content="2016-11-04T09:32:51.413Z">
+<meta property="og:updated_time" content="2016-11-04T09:52:48.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 安装指南">
 <meta name="twitter:description" content="Hexo官方介绍Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。官网 https://hexo.io/zh-cn/docs/index.html
@@ -295,7 +295,7 @@ Hexo博客建立简洁高效，如同官网的介绍。安装过程非常简单�
 </ul>
 <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><ul>
 <li>注册好GitHub账号,并安装好Node.js和Git.</li>
-<li>右键打开Git Bash,输入<br><code>$ git config --global user.name &quot;你的名字&quot;</code><br>`$ git config –global user.email “你的邮箱”``</li>
+<li>右键打开Git Bash,输入<br><code>$ git config --global user.name &quot;你的名字&quot;</code><br><code>$ git config --global user.email &quot;你的邮箱&quot;</code></li>
 <li>然后到<code>C:\Users\你的用户名</code>下查看是否生成了 <code>.ssh</code> 目录其中是否存在 <code>id_rsa</code> 和<code>id_rsa.pub</code> 文件.<br>不存在请在命令行输入 <code>ssh-keygen -t rsa -C &quot;你的邮箱&quot;</code><br>然后一路回车,使用默认值.无需配置密码.</li>
 <li>现在打开 <code>.ssh</code> 目录:<br><code>id_rsa</code> 是你的私钥,不要泄露<br><code>id_rsa.pub</code> 则是公钥, 可以放心地告诉任何人.</li>
 </ul>
@@ -325,8 +325,11 @@ Hexo博客建立简洁高效，如同官网的介绍。安装过程非常简单�
 </li>
 </ul>
 <p>注册一个DNS解析服务网站账号,添加你的域名然后添加纪录<br><img src="http://ww2.sinaimg.cn/mw690/9b7f4490gw1f9g7evsiasj20m506smyj.jpg" alt="添加记录"><br><code>主机记录:</code> @或www<br><code>记录类型:</code> CNAME<br><code>线路类型:</code> 默认<br><code>记录值:</code>你的Github的仓库地址,如 btjoker.github.io<br>其他的不需要修改.<br>然后就是等待Dns解析生效.</p>
-<ul>
-<li>零碎<br><code>source/_posts</code> 是文章的保存地方<br><code>_config.yml</code> 站点配置文件</li>
+<h2 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h2><ul>
+<li><code>source/_posts</code> 是文章的保存地方</li>
+<li><code>_config.yml</code> 站点配置文件</li>
+<li>如果更换主题后,请在 <code>.deploy_git</code> 和 <code>public</code> 文件夹存放一个空文件 <code>.nojekyll</code><br>这个是 GitHub 官方给出的更换主题后 <code>CSS/JS</code> 404错误的问题的解决方案.</li>
+<li>本教材基于<a href="http://www.jianshu.com/" target="_blank" rel="external">简书</a>的博主<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">潘柏信</a>的补充版.</li>
 </ul>
 
       
@@ -444,7 +447,7 @@ Hexo博客建立简洁高效，如同官网的介绍。安装过程非常简单�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo官方介绍"><span class="nav-number">1.</span> <span class="nav-text">Hexo官方介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客建立"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署至github"><span class="nav-number">3.</span> <span class="nav-text">部署至github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">4.</span> <span class="nav-text">前期准备:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步"><span class="nav-number">5.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步"><span class="nav-number">6.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步"><span class="nav-number">7.</span> <span class="nav-text">第三步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步"><span class="nav-number">8.</span> <span class="nav-text">第四步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步"><span class="nav-number">9.</span> <span class="nav-text">第五步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步"><span class="nav-number">10.</span> <span class="nav-text">第六步</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo官方介绍"><span class="nav-number">1.</span> <span class="nav-text">Hexo官方介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客建立"><span class="nav-number">2.</span> <span class="nav-text">Hexo博客建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署至github"><span class="nav-number">3.</span> <span class="nav-text">部署至github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">4.</span> <span class="nav-text">前期准备:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步"><span class="nav-number">5.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步"><span class="nav-number">6.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步"><span class="nav-number">7.</span> <span class="nav-text">第三步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步"><span class="nav-number">8.</span> <span class="nav-text">第四步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步"><span class="nav-number">9.</span> <span class="nav-text">第五步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步"><span class="nav-number">10.</span> <span class="nav-text">第六步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要"><span class="nav-number">11.</span> <span class="nav-text">重要</span></a></li></ol></div>
             
           </div>
         </section>
