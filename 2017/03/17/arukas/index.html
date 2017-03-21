@@ -1,0 +1,680 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="arukas,Docker,Shadowsocks," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="arukas.io  一款日本的Docker服务。 目前仍在免费测试期内， 截至到2017年3月31日都会提供无限制的Docker服务。 线路和国内直连的， 稳定。
+
+注册 官网：https://app.arukas.io/ 注册地址：https://app.arukas.io/sign_up/ 填写邮箱， 用户名， 密码注册。 如果收不到激活邮件， 可以用 github 直接登陆。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arukas">
+<meta property="og:url" content="btjoker.github.io/2017/03/17/arukas/index.html">
+<meta property="og:site_name" content="瓦尔哈拉">
+<meta property="og:description" content="arukas.io  一款日本的Docker服务。 目前仍在免费测试期内， 截至到2017年3月31日都会提供无限制的Docker服务。 线路和国内直连的， 稳定。
+
+注册 官网：https://app.arukas.io/ 注册地址：https://app.arukas.io/sign_up/ 填写邮箱， 用户名， 密码注册。 如果收不到激活邮件， 可以用 github 直接登陆。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq7migk5rj20ur0aak9r">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq7wfbv9yj20sg0ey0t0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq87etc11j20j00hbmxs.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq89kv6dsj20ty0cn3z0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq8ea4xktj20g00dw3z1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq8ebggl7j20g00dwaao.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq8e9zx5uj20cb07e0sq.jpg">
+<meta property="og:updated_time" content="2017-03-21T07:24:15.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arukas">
+<meta name="twitter:description" content="arukas.io  一款日本的Docker服务。 目前仍在免费测试期内， 截至到2017年3月31日都会提供无限制的Docker服务。 线路和国内直连的， 稳定。
+
+注册 官网：https://app.arukas.io/ 注册地址：https://app.arukas.io/sign_up/ 填写邮箱， 用户名， 密码注册。 如果收不到激活邮件， 可以用 github 直接登陆。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq7migk5rj20ur0aak9r">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Arukas | 瓦尔哈拉 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59299113";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">瓦尔哈拉</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Arukas
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-17T22:26:40+08:00" content="2017-03-17">
+              2017-03-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/17/arukas/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/17/arukas/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p> <img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq7migk5rj20ur0aak9r" alt="arukas"><br> <code>arukas.io</code>  一款日本的<code>Docker</code>服务。<br> 目前仍在免费测试期内， 截至到2017年3月31日都会提供无限制的<code>Docker</code>服务。<br> 线路和国内直连的， 稳定。</p>
+<hr>
+<h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p> 官网：<a href="https://app.arukas.io/" target="_blank" rel="external">https://app.arukas.io/</a><br> 注册地址：<a href="https://app.arukas.io/sign_up/" target="_blank" rel="external">https://app.arukas.io/sign_up/</a><br> 填写邮箱， 用户名， 密码注册。<br> 如果收不到激活邮件， 可以用 <a href="http://static-res.ruyo.net/arukas-github-register-activate.html" target="_blank" rel="external">github</a> 直接登陆。<br> <a id="more"></a> </p>
+<hr>
+<h4 id="搭建方式"><a href="#搭建方式" class="headerlink" title="搭建方式"></a>搭建方式</h4><p> 本人使用的是 <code>CentOS6 + SS</code></p>
+<p> 创建应用：<br> 镜像：<code>jdeathe/centos-ssh:centos-6</code><br> <img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq7wfbv9yj20sg0ey0t0.jpg" alt="填写"><br> 内存选 <code>512MB</code><br> 其中 <code>8989</code> 端口是留给默认ss设置端口的， <code>22</code>端口是 <code>SSH</code> 用的。</p>
+<hr>
+<h4 id="启动应用"><a href="#启动应用" class="headerlink" title="启动应用"></a>启动应用</h4><p> 启动应用，应用会自动部署，等绿了， 显示Running 就说明成功了。稍安勿躁等待一会。<br><img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq87etc11j20j00hbmxs.jpg" alt="说明"><br>点击绿色的 <code>watch</code> 按钮， 获取 <code>root</code> 权限的密码。</p>
+<h4 id="获取密码"><a href="#获取密码" class="headerlink" title="获取密码"></a>获取密码</h4><p><img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq89kv6dsj20ty0cn3z0.jpg" alt="显示"><br>复制 <code>password</code> 的值， 保存好。</p>
+<hr>
+<h4 id="创建SSH密钥"><a href="#创建SSH密钥" class="headerlink" title="创建SSH密钥"></a>创建SSH密钥</h4><p>使用浏览器访问：<a href="https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant" target="_blank" rel="external">https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant</a> 然后将内存保存到一个文本文件。</p>
+<p>使用方便的 <code>Xshell 5</code> 进行 <code>SSH</code> 操作。<br>填入22端口的地址， 不需要前边的 <code>http://</code></p>
+<p><img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq8ea4xktj20g00dw3z1.jpg" alt="1"></p>
+<p>用户名都是默认的 <code>app-admn&#39;</code>， 然后点浏览。</p>
+<p><img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq8ebggl7j20g00dwaao.jpg" alt="2"></p>
+<p>将保存的那个文本导入。<br>然后选择导入的密钥， 确定。</p>
+<p><img src="http://ww1.sinaimg.cn/large/9b7f4490gy1fdq8e9zx5uj20cb07e0sq.jpg" alt="3"></p>
+<p>连接SSH， 使用 <code>sudo -i</code> 切换到 <code>root</code> 账户下。<br>密码为获取密码步骤拿到的密码， <code>shift + insert</code> 粘贴如命令行。</p>
+<hr>
+<h4 id="安装ss"><a href="#安装ss" class="headerlink" title="安装ss"></a>安装ss</h4><p>快捷的方式就是使用一键脚本。<br><a href="https://teddysun.com/" target="_blank" rel="external">秋水逸冰</a>的一键go版本</p>
+<p>安装wget：<br><code>yum install wget -y</code></p>
+<p>获取脚本：</p>
+<pre><code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh
+chmod +x shadowsocks-go.sh
+./shadowsocks-go.sh 2&gt;&amp;1 | tee shadowsocks-go.log
+</code></pre><p>输入好 ss 的密码后直接按三次回车，稍等配置完成。</p>
+<p>记住密码，就可以直接关掉SSH工具了。</p>
+<hr>
+<h4 id="正确食用"><a href="#正确食用" class="headerlink" title="正确食用"></a>正确食用</h4><p>实际上Shadowsocks客户端里配置内容不是 SSH 中显示的 服务器IP和端口。<br>正确的服务器IP和端口在 <code>arukas</code> <a href="https://app.arukas.io/" target="_blank" rel="external">控制台</a>刚才创建的 <code>application</code>中。</p>
+<p>如图中箭头所指，正确的服务器ip和端口是 (8989/tcp) 所在的那行。</p>
+<h4 id="自动获取"><a href="#自动获取" class="headerlink" title="自动获取"></a>自动获取</h4><p><code>arukas</code> 的IP和端口有时候会发生变动， 每天使用要去控制台查看。太过于麻烦。<br>顺手写了一个利用 <code>arukas</code> 的 api 接口获取ip和端口， 生成 <code>Shadowsocks</code> 配置文件的工具。</p>
+<p><a href="https://github.com/btjoker/arukas-get" target="_blank" rel="external">arukas-get</a></p>
+<p>使用方式：<br>一种是有安装 golang ， 填写 <code>main.go</code> 文件里的 Token 和 Secret 和 ID，<code>go build</code> 编译文件后放在 <code>Shadowsocks</code> 根目录，然后为 <code>arukas-get.exe</code> 创建一个桌面快捷方式。以后直接运行这个程序会获取 ip和端口生成配置文件，自动运行 <code>Shadowsocks</code> 程序。</p>
+<p>另一种是下载 <code>releases</code> 的压缩包，解压到 <code>Shadowsocks</code> 根目录<br>填写 <code>apikey.txt</code> 文件里的 Token 和 Secret 和 ID， 为 <code>arukas-get.exe</code> 创建一个桌面快捷方式。以后直接运行这个程序会获取 ip和端口生成配置文件，自动运行 <code>Shadowsocks</code> 程序。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/arukas/" rel="tag">#arukas</a>
+          
+            <a href="/tags/Docker/" rel="tag">#Docker</a>
+          
+            <a href="/tags/Shadowsocks/" rel="tag">#Shadowsocks</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/03/Hexo指南/" rel="next" title="Hexo 安装指南">
+                <i class="fa fa-chevron-left"></i> Hexo 安装指南
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/17/arukas/"
+           data-title="Arukas" data-url="btjoker.github.io/2017/03/17/arukas/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="btjoker" />
+          <p class="site-author-name" itemprop="name">btjoker</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/btjoker" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册"><span class="nav-number">1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搭建方式"><span class="nav-number">2.</span> <span class="nav-text">搭建方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动应用"><span class="nav-number">3.</span> <span class="nav-text">启动应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取密码"><span class="nav-number">4.</span> <span class="nav-text">获取密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建SSH密钥"><span class="nav-number">5.</span> <span class="nav-text">创建SSH密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ss"><span class="nav-number">6.</span> <span class="nav-text">安装ss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正确食用"><span class="nav-number">7.</span> <span class="nav-text">正确食用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动获取"><span class="nav-number">8.</span> <span class="nav-text">自动获取</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016年11月4日 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">btjoker</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.4.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.4.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"acjoker"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
